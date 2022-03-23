@@ -9,36 +9,49 @@ const App = () => {
 
     return(
         <div className='app'>
+
             <div className='navbar'>
                 <NavBar/>
             </div>
+
             <div className='main'>
                 <Layout>
                     <div className='router'>
                         <Switch>
-                            <Route exactly path='/'>
+                            <Route exact path='/'>
                                 <Homepage/>
                             </Route>
-                            <Route exactly path='/exchanges'>
+                            <Route exact path='/exchanges'>
                                 <Exchanges/>
                             </Route>
-                            <Route exactly path='/cryptocurrencies'>
+                            <Route exact path='/cryptocurrencies'>
                                 <Cryptocurrencies/>
                             </Route>
-                            <Route exactly path='/crypto/:coinId'>
+                            <Route exact path='/crypto/:coinId'>
                                 <CryptoDetails/>
                             </Route>
-                            <Route exactly path='/news'>
+                            <Route exact path='/news'>
                                 <News/>
                             </Route>
                         </Switch>
                     </div>
                 </Layout>
+
+                <div className='footer'>
+                <Typography.Title level={5} style={{ color:'white', textAlign:'center'}}>
+                    CryptoVerse <br/>
+                    All rights reserved
+                </Typography.Title>
+                <Space>
+                    <Link to='/'>Home</Link>
+                    <Link to='/exchanges'>Exchanges</Link>
+                    <Link to='/news'>News</Link>
+                </Space>
+
+            </div>
                 
             </div>
-            <div className='footer'>
-                
-            </div>
+            
         </div>
     )
     
