@@ -17,13 +17,15 @@ const Cryptocurrencies = ({simplified}) => {
 
     if(isFetching) return 'Loading...'
 
-    // console.log(cryptos)
 
   return (
     <>
-        <div className="search-crypto">
-            <Input placeholder="Search cryptocurrency" onChange={(e) => setSearchTerm(e.target.value)}/>
-        </div>
+        {
+            !simplified &&
+            <div className="search-crypto">
+                <Input placeholder="Search cryptocurrency" onChange={(e) => setSearchTerm(e.target.value)}/>
+            </div>
+        }
         <Row gutter={[32,32]} className='crypto-card-container'>
             {
                 cryptos?.map( currency => (
