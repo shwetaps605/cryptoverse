@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
 import moment from 'moment'
-
+import Loader from './Loader'
 import { useGetCryptoNewsQuery } from '../services/newsApi'
 import { useGetCryptosQuery } from '../services/cryptoApi'
 const { Text, Title } = Typography
 const { Option } = Select
+
 
 const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
 
@@ -16,7 +17,7 @@ const News = ({ simplified }) => {
     const news = cryptoNews?.value
     const { data: cryptocurrencies } = useGetCryptosQuery(100)
 
-    if (!news) return 'Loading...'
+    if (!news) return <Loader/>
 
 
     return (
