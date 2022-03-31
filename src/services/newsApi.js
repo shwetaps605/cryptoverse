@@ -7,7 +7,6 @@ const newsApiHeaders = {
 }
 
 const baseUrl = 'https://bing-news-search1.p.rapidapi.com'
-
 const createRequest = (url) => ({ url, headers: newsApiHeaders})
 
 export const newsApi = createApi({
@@ -18,9 +17,6 @@ export const newsApi = createApi({
             query: ({newsCategory, count}) => createRequest(`/news/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`)
         })
     })
-
 })
-
-// console.log("HERE IS THE REDUCER",newsApi.reducer)
 
 export const { useGetCryptoNewsQuery } = newsApi
